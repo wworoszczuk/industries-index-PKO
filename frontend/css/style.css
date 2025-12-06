@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'MojaCzcionka';
+    src: url('../assets/mina/Mina-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MojaCzcionka';
+    src: url('../assets/mina/Mina-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MojaCzcionka', sans-serif;
+    background-color: #f7f8fa;
+    color: #0B1C4A;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #0B1C4A;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+h1 {
+    font-weight: normal;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    color: #0B1C4A;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+section h3 {
+    color: #0B1C4A;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+.indicator .latex {
+    background-color: #f0f4f8;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.indicator-details p {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+}
