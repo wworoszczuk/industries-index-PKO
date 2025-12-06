@@ -118,7 +118,7 @@
         <section class="intro">
             <h2>🎯 Indeks Atrakcyjności Branżowej (IAB)</h2>
             <p>
-                <strong>Liczymy wskaźnik mierzący zdolność branży do wzrostu</strong>,<br /> czyli potencjalną potrzebę finansowania przez bank.
+                <strong>Liczymy wskaźnik mierzący zdolność branży do wzrostu</strong>,<br /> czyli potencjalną potrzebę finansowania przez bank, uwzględniając przy tym jej wypłacalność oraz aktualną kondycję finansową sektora.
                 <br /><br />System wspiera banki w:
             </p>
             <ul>
@@ -167,7 +167,6 @@
         <section>
             <h2>🧮 KOMPONENTY WSKAŹNIKA</h2>
 
-            <!-- Komponent 1: Zdrowie Sektora -->
             <div class="component-box">
                 <h4>1. Wskaźnik Zdrowia Sektora (SH) <span class="weight-tag">waga: 30%</span></h4>
                 
@@ -186,10 +185,10 @@
                     <li>\(\bar{E}_i\) - średnie zatrudnienie w branży</li>
                 </ul>
 
-                <p><strong>Interpretacja:</strong> Mierzy dynamikę rozwoju branży poprzez liczbę nowych podmiotów, wskaźnik przetrwania firm oraz wzrost zatrudnienia. Wysoka wartość wskazuje na rozwijający się sektor z rosnącym zainteresowaniem przedsiębiorców.</p>
+                <p><strong>Interpretacja:</strong> Mierzy dynamikę rozwoju branży poprzez liczbę nowych podmiotów, wskaźnik przetrwania firm oraz wzrost zatrudnienia.</p>
+                <p><strong>Jak do tego doszliśmy:</strong> Korzystając z danych z GUS możemy obliczyć, jak ma się dany sektor gospodarki poprzez obliczenie wzrostu i aktywności firm w branży, uwzględniając czynnik ich upadalności oraz zatrudnienia.</strong></p>
             </div>
 
-            <!-- Komponent 2: Rentowność -->
             <div class="component-box">
                 <h4>2. Wskaźnik Rentowności (SP) <span class="weight-tag">waga: 35%</span></h4>
                 
@@ -207,10 +206,10 @@
                     <li>\(E_i\) - liczba zatrudnionych</li>
                 </ul>
 
-                <p><strong>Interpretacja:</strong> Ocenia zdolność branży do generowania zysku i wartości dodanej. Kluczowy dla banku wskaźnik określający, czy branża może spłacać zobowiązania kredytowe. Wysoka rentowność = większa zdolność kredytowa.</p>
+                <p><strong>Interpretacja:</strong> Ocenia zdolność branży do generowania zysku i wartości dodanej. Kluczowy wskaźnik określający, czy branża może spłacać zobowiązania kredytowe, czy też nie. Wysoka rentowność to większa zdolność kredytowa.</p>
+                <p><strong>Jak do tego doszliśmy:</strong> Chcąc sprawdzić zysk danego sektora wzięliśmy dane z GUS, na podstawie których obliczaliśmy zysk z przychodów, przy danym PKB i zatrudnieniu.</p>
             </div>
 
-            <!-- Komponent 3: Odporność -->
             <div class="component-box">
                 <h4>3. Wskaźnik Odporności (SR) <span class="weight-tag">waga: 20%</span></h4>
                 
@@ -228,9 +227,9 @@
                 </ul>
 
                 <p><strong>Interpretacja:</strong> Mierzy odporność branży na szoki makroekonomiczne. Branże eksportowe, stabilne cyklicznie i oferujące rosnące wynagrodzenia są bardziej odporne na kryzysy. Istotne dla długoterminowej oceny ryzyka kredytowego.</p>
+                <p><strong>Jak do tego doszliśmy:</strong> Wartość tą określaliśmy przez wyznaczenie zmienności w branży przy zmiennych rynkowych i wartości eksportu oraz aktualnych wartościach średniego wynagrodzenia.</p>
             </div>
 
-            <!-- Komponent 4: Ryzyko -->
             <div class="component-box">
                 <h4>4. Wskaźnik Ryzyka (RR) <span class="weight-tag">waga: 15%</span></h4>
                 
@@ -247,10 +246,10 @@
                     <li>\(AR_i\) - indeks ryzyka automatyzacji (0-1)</li>
                 </ul>
 
-                <p><strong>Interpretacja:</strong> Kwantyfikuje poziom ryzyka w branży. Wysoki wskaźnik upadłości, niestabilne zyski i duże ryzyko automatyzacji podnoszą ryzyko kredytowe. <strong>RR jest odejmowany od IAB</strong>, ponieważ wyższe ryzyko obniża atrakcyjność branży. Dodatkowa kara za "falę upadłości" (>40 firm).</p>
+                <p><strong>Interpretacja:</strong> Kwantyfikuje poziom ryzyka w branży. Wysoki wskaźnik upadłości, niestabilne zyski i duże ryzyko automatyzacji podnoszą ryzyko kredytowe. </p>
+                <p><strong>Jak do tego doszliśmy:</strong> Wyliczamy współczynnik zamkniętych firm w branży przez liczbę aktywnych firm. Dodajemy do tego zwiększającą ryzyko zamknięcia biznesu automatyzację.</p>
             </div>
 
-            <!-- Komponent 5: Wpływ AI -->
             <div class="component-box">
                 <h4>5. Wpływ AI i Automatyzacji (AI) <span class="weight-tag">waga: 10%</span></h4>
                 
@@ -280,9 +279,9 @@
                 <p><strong>Źródło trendu AI:</strong> Global Robotics & AI ETF (BOTZ), zmiana 6M</p>
 
                 <p><strong>Interpretacja:</strong> Branże tworzące technologie AI (IT, elektronika) otrzymują największy bonus przy rosnącym trendzie AI. Branże wspierane przez AI (wykorzystujące automatyzację do efektywności) otrzymują umiarkowany bonus. Branże zagrożone przez automatyzację (handel detaliczny, transport) otrzymują karę. Czynnik ten przewiduje przyszłą konkurencyjność branży.</p>
+                <p><strong>Jak do tego doszliśmy:</strong> Metodą prób i błędów. Współczynniki modyfikowaliśmy w zależności od faktycznej sytuacji rynkowej na próbnych danych. Współczynnik w przybliżeniu.</p>
             </div>
 
-            <!-- Komponent 6: Koszty Makro -->
             <div class="component-box" >
                 <h4>6. Koszty Makroekonomiczne (MC) <span class="weight-tag">waga: 5%</span></h4>
                 
@@ -329,9 +328,9 @@
                 </ul>
 
                 <p><strong>Interpretacja:</strong> Uwzględnia strukturalne koszty makroekonomiczne charakterystyczne dla danej branży. Branże energochłonne tracą punkty przy rosnących cenach energii. Branże finansowe i budowlane przy wysokich stopach procentowych. System przewiduje presję na marże wynikającą z czynników zewnętrznych.</p>
+                <p><strong>Jak do tego doszliśmy: </strong>Wzięliśmy pod uwagę główne czynniki wpływające na cenę kluczowych usług, poddaliśmy to analizie w oparciu o dostępne indeksy i porównaliśmy z innymi czynnikami, aż postać przybrała realną dla danych testowych formę.</strong> </p>
             </div>
 
-            <!-- Komponent 7: Trendy Globalne -->
             <div class="component-box">
                 <h4>7. Trendy Globalne (GT) <span class="weight-tag">waga: 5%</span></h4>
                 
@@ -364,6 +363,7 @@
                 </table>
 
                 <p><strong>Interpretacja:</strong> Ograniczony wpływ (±10 pkt max) globalnych trendów sektorowych. Uznajemy, że rynek amerykański jest predyktorem trendów globalnych. Branże rosnące na giełdach USA zazwyczaj rosną również w Polsce z opóźnieniem. Jednak lokalny kontekst (PL) ma większe znaczenie, stąd niska waga tego komponentu.</p>
+                <p><strong>Interpretacja:</strong> Polskie GPW nie posiada tak rozbudowanych ETFów, dlatego skorzystaliśmy z zagranicznych, jednakże sytuacja niektórych sektorów (np. wydobywczy) jest w USA zupełnie inna niż w Polsce. Dążyliśmy do zmniejszania współczynnika ETFów z zagranicy na rzecz tych polskich, gdzie to możliwe, aż ukazał się właściwy obraz sytuacji.</p>
             </div>
         </section>
 
