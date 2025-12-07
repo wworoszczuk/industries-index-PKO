@@ -14,7 +14,6 @@
             margin: 25px 0;
             border-radius: 10px;
         }
-        
         .component-box {
             background: white;
             border: 2px solid #e0e6ed;
@@ -22,13 +21,11 @@
             margin: 15px 0;
             border-radius: 10px;
         }
-        
         .component-box h4 {
             color: #0B1C4A;
             margin-bottom: 10px;
             font-size: 1.1rem;
         }
-        
         .weight-tag {
             display: inline-block;
             background: #0B1C4A;
@@ -39,7 +36,16 @@
             font-weight: bold;
             margin-left: 10px;
         }
-        
+        .interpretation-box {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .interpretation-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
         .warning {
             background: #fff3e0;
             border-left: 4px solid #f57c00;
@@ -47,7 +53,6 @@
             margin: 20px 0;
             border-radius: 10px;
         }
-        
         .example {
             background: #f5f5f5;
             padding: 20px;
@@ -55,29 +60,24 @@
             border-radius: 10px;
             font-family: 'Courier New', monospace;
         }
-        
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
-        
         table th, table td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #e0e6ed;
         }
-        
         table th {
             background: #0B1C4A;
             color: white;
             font-weight: bold;
         }
-        
         table tr:hover {
             background: #f7f8fa;
         }
-        
         .score-range {
             display: inline-block;
             padding: 6px 12px;
@@ -85,11 +85,9 @@
             font-weight: bold;
             margin: 5px;
         }
-        
         .score-high { background: #c8e6c9; color: #2e7d32; }
         .score-medium { background: #fff9c4; color: #f57f17; }
         .score-low { background: #ffcdd2; color: #c62828; }
-        
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -101,7 +99,6 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
-        
         .back-link:hover {
             background: #1a3a6b;
             transform: translateY(-2px);
@@ -114,380 +111,186 @@
         <h1>METODOLOGIA</h1>
     </header>
 
-    <main>
-        <section class="intro">
-            <h2>🎯 Indeks Atrakcyjności Branżowej (IAB)</h2>
+<main>
+    <section class="intro">
+        <h2>🎯 Indeks Atrakcyjności Branżowej (IAB)</h2>
+        <p>
+            <strong>Liczymy wskaźnik mierzący zdolność branży do wzrostu</strong>, uwzględniając jej wypłacalność oraz aktualną kondycję finansową sektora.
+            <br><br>System wspiera banki w:
+        </p>
+        <ul>
+            <li>Identyfikacji branż o wysokim potencjale wzrostu i niskim ryzyku kredytowym</li>
+            <li>Wczesnym wykrywaniu zagrożeń systemowych w sektorach gospodarki</li>
+            <li>Prognozowaniu zapotrzebowania na finansowanie w różnych branżach</li>
+        </ul>
+    </section>
+
+    <section class="indicator">
+        <h2>📐 INDEKS ATRAKCYJNOŚCI BRANŻOWEJ (IAB)</h2>
+        <div class="formula-box">
+            <h3 style="margin-top: 0;">Wzór główny:</h3>
             <p>
-                <strong>Liczymy wskaźnik mierzący zdolność branży do wzrostu</strong>,<br /> czyli potencjalną potrzebę finansowania przez bank, uwzględniając przy tym jej wypłacalność oraz aktualną kondycję finansową sektora.
-                <br /><br />System wspiera banki w:
+                \[ IAB_i = w_1 \cdot SH_i + w_2 \cdot SP_i + w_3 \cdot SR_i - w_4 \cdot RR_i + w_5 \cdot AI_i + w_6 \cdot MC_i + w_7 \cdot GT_i \]
             </p>
+            <p style="margin-top: 20px;"><strong>gdzie:</strong></p>
             <ul>
-                <li>Identyfikacji branż o wysokim potencjale wzrostu i niskim ryzyku kredytowym</li>
-                <li>Wczesnym wykrywaniu zagrożeń systemowych w sektorach gospodarki</li>
-                <li>Prognozowaniu zapotrzebowania na finansowanie w różnych branżach</li>
+                <li>SH, SP, SR, RR, AI, MC, GT - komponenty wskaźnika</li>
+                <li>w_1...w_7 - wagi</li>
             </ul>
-        </section>
-
-        <section class="indicator">
-            <h2>📐 INDEKS ATRAKCYJNOŚCI BRANŻOWEJ (IAB)</h2>
-            
-            <div class="formula-box">
-                <h3 style="margin-top: 0;">Wzór główny:</h3>
-                <p>
-                    \[
-                    IAB_i = w_1 \cdot SH_i + w_2 \cdot SP_i + w_3 \cdot SR_i - w_4 \cdot RR_i + w_5 \cdot AI_i + w_6 \cdot MC_i + w_7 \cdot GT_i
-                    \]
-                </p>
-
-                <p style="margin-top: 20px;"><strong>gdzie:</strong></p>
-                <ul>
-                    <li>\(IAB_i\) - Indeks Atrakcyjności Branżowej dla branży \(i\)</li>
-                    <li>\(SH_i\) - Wskaźnik Zdrowia Sektora (Sector Health)</li>
-                    <li>\(SP_i\) - Wskaźnik Rentowności (Sector Profitability)</li>
-                    <li>\(SR_i\) - Wskaźnik Odporności (Sector Resilience)</li>
-                    <li>\(RR_i\) - Wskaźnik Ryzyka (Risk Rating)</li>
-                    <li>\(AI_i\) - Wpływ AI i Automatyzacji</li>
-                    <li>\(MC_i\) - Koszty Makroekonomiczne</li>
-                    <li>\(GT_i\) - Trendy Globalne (giełda)</li>
-                    <li>\(w_1...w_7\) - wagi komponentów</li>
-                </ul>
-            </div>
-
-            <div class="interpretation">
-                <h3>🎨 Interpretacja wyniku:</h3>
-                <p><strong>Wynik IAB mieści się w przedziale [-100, 100]</strong></p>
-                <div>
-                    <span class="score-range score-high">60-100: Wysoka atrakcyjność</span>
-                    <span class="score-range score-medium">20-60: Średnia atrakcyjność</span>
-                    <span class="score-range score-low">-100-20: Niska atrakcyjność</span>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>🧮 KOMPONENTY WSKAŹNIKA</h2>
-
-            <div class="component-box">
-                <h4>1. Wskaźnik Zdrowia Sektora (SH) <span class="weight-tag">waga: 30%</span></h4>
-                
-                <div class="formula-box">
-                    $$SH_i = 100 \times \left[ 0.4 \cdot \frac{\Delta N_i}{\bar{N}_i} + 0.3 \cdot \frac{N_{active,i}}{N_{active,i} + L_i + B_i} + 0.3 \cdot \frac{\Delta E_i}{\bar{E}_i} \right]$$
-                </div>
-
-                <p><strong>Składowe:</strong></p>
-                <ul>
-                    <li>\(\Delta N_i\) - wzrost liczby nowych firm (rok do roku)</li>
-                    <li>\(\bar{N}_i\) - średnia liczba firm w branży</li>
-                    <li>\(N_{active,i}\) - liczba aktywnych firm</li>
-                    <li>\(L_i\) - liczba likwidacji</li>
-                    <li>\(B_i\) - liczba upadłości</li>
-                    <li>\(\Delta E_i\) - wzrost zatrudnienia (rok do roku)</li>
-                    <li>\(\bar{E}_i\) - średnie zatrudnienie w branży</li>
-                </ul>
-
-                <p><strong>Interpretacja:</strong> Mierzy dynamikę rozwoju branży poprzez liczbę nowych podmiotów, wskaźnik przetrwania firm oraz wzrost zatrudnienia.</p>
-                <p><strong>Jak do tego doszliśmy:</strong> Korzystając z danych z GUS możemy obliczyć, jak ma się dany sektor gospodarki poprzez obliczenie wzrostu i aktywności firm w branży, uwzględniając czynnik ich upadalności oraz zatrudnienia.</strong></p>
-            </div>
-
-            <div class="component-box">
-                <h4>2. Wskaźnik Rentowności (SP) <span class="weight-tag">waga: 35%</span></h4>
-                
-                <div class="formula-box">
-                    $$SP_i = 100 \times \left[ 0.5 \cdot \frac{P_i}{R_i} + 0.3 \cdot \frac{\Delta R_i}{\bar{R}_i} + 0.2 \cdot \frac{VA_i}{E_i} \right]$$
-                </div>
-
-                <p><strong>Składowe:</strong></p>
-                <ul>
-                    <li>\(P_i\) - średni zysk netto w branży</li>
-                    <li>\(R_i\) - średnie przychody w branży</li>
-                    <li>\(\Delta R_i\) - wzrost przychodów (rok do roku)</li>
-                    <li>\(\bar{R}_i\) - średnie przychody w okresie</li>
-                    <li>\(VA_i\) - wartość dodana brutto (PKB sektora)</li>
-                    <li>\(E_i\) - liczba zatrudnionych</li>
-                </ul>
-
-                <p><strong>Interpretacja:</strong> Ocenia zdolność branży do generowania zysku i wartości dodanej. Kluczowy wskaźnik określający, czy branża może spłacać zobowiązania kredytowe, czy też nie. Wysoka rentowność to większa zdolność kredytowa.</p>
-                <p><strong>Jak do tego doszliśmy:</strong> Chcąc sprawdzić zysk danego sektora wzięliśmy dane z GUS, na podstawie których obliczaliśmy zysk z przychodów, przy danym PKB i zatrudnieniu.</p>
-            </div>
-
-            <div class="component-box">
-                <h4>3. Wskaźnik Odporności (SR) <span class="weight-tag">waga: 20%</span></h4>
-                
-                <div class="formula-box">
-                    $$SR_i = 100 \times \left[ 0.4 \cdot \frac{X_i}{R_i} + 0.3 \cdot (1 - \beta_i) + 0.3 \cdot \frac{\Delta S_i}{\bar{S}_i} \right]$$
-                </div>
-
-                <p><strong>Składowe:</strong></p>
-                <ul>
-                    <li>\(X_i\) - wartość eksportu branży</li>
-                    <li>\(R_i\) - przychody branży</li>
-                    <li>\(\beta_i\) - wrażliwość branży na cykle koniunkturalne (beta rynkowa)</li>
-                    <li>\(\Delta S_i\) - zmiana wynagrodzeń w branży</li>
-                    <li>\(\bar{S}_i\) - średnie wynagrodzenie</li>
-                </ul>
-
-                <p><strong>Interpretacja:</strong> Mierzy odporność branży na szoki makroekonomiczne. Branże eksportowe, stabilne cyklicznie i oferujące rosnące wynagrodzenia są bardziej odporne na kryzysy. Istotne dla długoterminowej oceny ryzyka kredytowego.</p>
-                <p><strong>Jak do tego doszliśmy:</strong> Wartość tą określaliśmy przez wyznaczenie zmienności w branży przy zmiennych rynkowych i wartości eksportu oraz aktualnych wartościach średniego wynagrodzenia.</p>
-            </div>
-
-            <div class="component-box">
-                <h4>4. Wskaźnik Ryzyka (RR) <span class="weight-tag">waga: 15%</span></h4>
-                
-                <div class="formula-box">
-                    $$RR_i = 100 \times \left[ 0.5 \cdot \frac{B_i + L_i}{N_{active,i}} + 0.3 \cdot \sigma_{P_i} + 0.2 \cdot AR_i \right]$$
-                </div>
-
-                <p><strong>Składowe:</strong></p>
-                <ul>
-                    <li>\(B_i\) - liczba upadłości w branży</li>
-                    <li>\(L_i\) - liczba likwidacji</li>
-                    <li>\(N_{active,i}\) - liczba aktywnych firm</li>
-                    <li>\(\sigma_{P_i}\) - odchylenie standardowe zysków (zmienność)</li>
-                    <li>\(AR_i\) - indeks ryzyka automatyzacji (0-1)</li>
-                </ul>
-
-                <p><strong>Interpretacja:</strong> Kwantyfikuje poziom ryzyka w branży. Wysoki wskaźnik upadłości, niestabilne zyski i duże ryzyko automatyzacji podnoszą ryzyko kredytowe. </p>
-                <p><strong>Jak do tego doszliśmy:</strong> Wyliczamy współczynnik zamkniętych firm w branży przez liczbę aktywnych firm. Dodajemy do tego zwiększającą ryzyko zamknięcia biznesu automatyzację.</p>
-            </div>
-
-            <div class="component-box">
-                <h4>5. Wpływ AI i Automatyzacji (AI) <span class="weight-tag">waga: 10%</span></h4>
-                
-                <div class="formula-box">
-                    <p>
-                        \[
-                        AI_i =
-                        \begin{cases}
-                        100 \times 3 \times \Delta_{AI} & \text{jeśli branża tworzy AI (CREATOR)} \\
-                        100 \times 1.5 \times \Delta_{AI} & \text{jeśli branża wspierana przez AI (SUPPORTED)} \\
-                        -100 \times 1.5 \times |\Delta_{AI}| & \text{jeśli branża zagrożona (THREATENED)} \\
-                        0 & \text{w pozostałych przypadkach (NEUTRAL)}
-                        \end{cases}
-                        \]
-                    </p>
-                </div>
-
-
-                <p><strong>Profile AI branż:</strong></p>
-                <ul>
-                    <li><strong>CREATOR (x3.0):</strong> PKD 26 (elektronika), 62 (IT), 63 (telekomunikacja), 72 (B+R)</li>
-                    <li><strong>SUPPORTED (x1.5):</strong> PKD 01-03 (rolnictwo), 10-30 (produkcja), 64-66 (finanse), 86-87 (zdrowie)</li>
-                    <li><strong>THREATENED (-1.5x):</strong> PKD 45-56 (handel, transport, gastron), 58 (wydawnictwa)</li>
-                    <li><strong>NEUTRAL:</strong> Pozostałe branże</li>
-                </ul>
-
-                <p><strong>Źródło trendu AI:</strong> Global Robotics & AI ETF (BOTZ), zmiana 6M</p>
-
-                <p><strong>Interpretacja:</strong> Branże tworzące technologie AI (IT, elektronika) otrzymują największy bonus przy rosnącym trendzie AI. Branże wspierane przez AI (wykorzystujące automatyzację do efektywności) otrzymują umiarkowany bonus. Branże zagrożone przez automatyzację (handel detaliczny, transport) otrzymują karę. Czynnik ten przewiduje przyszłą konkurencyjność branży.</p>
-                <p><strong>Jak do tego doszliśmy:</strong> Metodą prób i błędów. Współczynniki modyfikowaliśmy w zależności od faktycznej sytuacji rynkowej na próbnych danych. Współczynnik w przybliżeniu.</p>
-            </div>
-
-            <div class="component-box" >
-                <h4>6. Koszty Makroekonomiczne (MC) <span class="weight-tag">waga: 5%</span></h4>
-                
-                <div class="formula-box">
-                    $$MC_i = \sum_{risk \in Risks_i} \text{Impact}(risk)$$
-                    <p style="margin-top: 10px; font-size: 0.9rem;">gdzie Risks<sub>i</sub> = {CO2_INTENSIVE, ENERGY_SENSITIVE, INTEREST_SENSITIVE, COMMODITY_EXPOSED}</p>
-                </div>
-
-                <p><strong>Profile ryzyka makro:</strong></p>
-                <table>
-                    <tr>
-                        <th>Ryzyko</th>
-                        <th>Branże (PKD)</th>
-                        <th>Mechanizm wpływu</th>
-                    </tr>
-                    <tr>
-                        <td><strong>CO2_INTENSIVE</strong></td>
-                        <td>05-09, 19, 23-24, 35</td>
-                        <td>Kara za rosnące ceny CO2 (emisje, energia)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ENERGY_SENSITIVE</strong></td>
-                        <td>10, 20, 22-25, 29-30</td>
-                        <td>Wrażliwe na ceny gazu i ropy</td>
-                    </tr>
-                    <tr>
-                        <td><strong>INTEREST_SENSITIVE</strong></td>
-                        <td>41-43, 64-66, 68</td>
-                        <td>Kara przy wysokich stopach (>5%)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>COMMODITY_EXPOSED</strong></td>
-                        <td>01-02, 10, 13-17</td>
-                        <td>Wrażliwe na ceny surowców</td>
-                    </tr>
-                </table>
-
-                <p><strong>Źródła danych:</strong></p>
-                <ul>
-                    <li>Ceny CO2: KRBN (Carbon Credit ETF)</li>
-                    <li>Ceny gazu: NG=F (Natural Gas Futures)</li>
-                    <li>Ceny ropy: CL=F (Crude Oil Futures)</li>
-                    <li>Stopy procentowe: ^TNX (10-Year Treasury)</li>
-                </ul>
-
-                <p><strong>Interpretacja:</strong> Uwzględnia strukturalne koszty makroekonomiczne charakterystyczne dla danej branży. Branże energochłonne tracą punkty przy rosnących cenach energii. Branże finansowe i budowlane przy wysokich stopach procentowych. System przewiduje presję na marże wynikającą z czynników zewnętrznych.</p>
-                <p><strong>Jak do tego doszliśmy: </strong>Wzięliśmy pod uwagę główne czynniki wpływające na cenę kluczowych usług, poddaliśmy to analizie w oparciu o dostępne indeksy i porównaliśmy z innymi czynnikami, aż postać przybrała realną dla danych testowych formę.</strong> </p>
-            </div>
-
-            <div class="component-box">
-                <h4>7. Trendy Globalne (GT) <span class="weight-tag">waga: 5%</span></h4>
-                
-                <div class="formula-box">
-                    $$GT_i = \text{min}(10, \text{max}(-10, 100 \times \Delta_{ETF_i}))$$
-                    <p style="margin-top: 10px; font-size: 0.9rem;">gdzie Δ<sub>ETF<sub>i</sub></sub> = zmiana ETF sektorowego w ostatnich 6 miesiącach</p>
-                </div>
-
-                <p><strong>Mapowanie branż na ETF-y USA:</strong></p>
-                <table>
-                    <tr>
-                        <th>PKD</th>
-                        <th>ETF/Indeks</th>
-                        <th>Sektor</th>
-                    </tr>
-                    <tr><td>01-02</td><td>DBA</td><td>Agriculture</td></tr>
-                    <tr><td>05</td><td>XME</td><td>Metals & Mining</td></tr>
-                    <tr><td>10</td><td>XLP</td><td>Consumer Staples</td></tr>
-                    <tr><td>19</td><td>XLE</td><td>Energy</td></tr>
-                    <tr><td>26</td><td>SOXX</td><td>Semiconductors</td></tr>
-                    <tr><td>29</td><td>XLI</td><td>Industrials</td></tr>
-                    <tr><td>35</td><td>XLU</td><td>Utilities</td></tr>
-                    <tr><td>41</td><td>ITB</td><td>Home Builders</td></tr>
-                    <tr><td>45</td><td>XRT</td><td>Retail</td></tr>
-                    <tr><td>62</td><td>IGV</td><td>Software</td></tr>
-                    <tr><td>63</td><td>^IXIC</td><td>NASDAQ (Tech)</td></tr>
-                    <tr><td>64</td><td>XLF</td><td>Financials</td></tr>
-                    <tr><td>68</td><td>XLRE</td><td>Real Estate</td></tr>
-                    <tr><td>86</td><td>XLV</td><td>Healthcare</td></tr>
-                </table>
-
-                <p><strong>Interpretacja:</strong> Ograniczony wpływ (±10 pkt max) globalnych trendów sektorowych. Uznajemy, że rynek amerykański jest predyktorem trendów globalnych. Branże rosnące na giełdach USA zazwyczaj rosną również w Polsce z opóźnieniem. Jednak lokalny kontekst (PL) ma większe znaczenie, stąd niska waga tego komponentu.</p>
-                <p><strong>Jak do tego doszliśmy:</strong> Polskie GPW nie posiada tak rozbudowanych ETFów, dlatego skorzystaliśmy z zagranicznych, jednakże sytuacja niektórych sektorów (np. wydobywczy) jest w USA zupełnie inna niż w Polsce. Dążyliśmy do zmniejszania współczynnika ETFów z zagranicy na rzecz tych polskich, gdzie to możliwe, aż ukazał się właściwy obraz sytuacji.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>⚖️ SYSTEM WAG</h2>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Komponent</th>
-                        <th>Waga domyślna</th>
-                        <th>Uzasadnienie</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Rentowność (SP)</strong></td>
-                        <td>30% (w₂ = 0.30)</td>
-                        <td>Najważniejszy czynnik - bezpośrednio wpływa na zdolność do spłaty kredytów</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Zdrowie Sektora (SH)</strong></td>
-                        <td>25% (w₁ = 0.25)</td>
-                        <td>Dynamika wzrostu determinuje przyszłe zapotrzebowanie na finansowanie</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Odporność (SR)</strong></td>
-                        <td>15% (w₃ = 0.15)</td>
-                        <td>Stabilność długoterminowa, ochrona przed szokami makro</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ryzyko (RR)</strong></td>
-                        <td>10% (w₄ = 0.10)</td>
-                        <td>Upadłości i zmienność - podwyższona kara za falę upadłości (>40 firm)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Wpływ AI (AI)</strong></td>
-                        <td>10% (w₅ = 0.10)</td>
-                        <td>Przyszłościowy - przewiduje konkurencyjność w erze automatyzacji</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Koszty Makro (MC)</strong></td>
-                        <td>5% (w₆ = 0.05)</td>
-                        <td>Strukturalne koszty zewnętrzne (CO2, energia, stopy)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Trendy Globalne (GT)</strong></td>
-                        <td>5% (w₇ = 0.05)</td>
-                        <td>Ograniczony wpływ - giełda USA jako predyktor, ale priorytet dla PL</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p style="margin-top: 20px;"><strong>Podział wag:</strong></p>
-            <ul>
-                <li><strong>70%</strong> - Komponenty podstawowe (dane lokalne PL)</li>
-                <li><strong>30%</strong> - Komponenty rozszerzone (trendy globalne)</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>📊 NORMALIZACJA I STANDARYZACJA</h2>
-            
-            <p>Wszystkie komponenty są normalizowane do przedziału [-100, 100] za pomocą:</p>
-            
-            <div class="formula-box">
-                $$X_{norm} = 100 \times \frac{X - X_{min}}{X_{max} - X_{min}} - 50$$
-            </div>
-
-            <p>Następnie stosujemy z-score dla porównywalności międzybranżowej:</p>
-            
-            <div class="formula-box">
-                $$z_i = \frac{X_i - \mu}{\sigma}$$
-            </div>
-
-            <p>gdzie \(\mu\) - średnia wszystkich branż, \(\sigma\) - odchylenie standardowe.</p>
-        </section>
-
-        <section>
-            <h2>🎯 ZASTOSOWANIA PRAKTYCZNE</h2>
-            
-            <h3>1. Polityka kredytowa</h3>
-            <ul>
-                <li><strong>IAB > 60:</strong> Branże priorytetowe - preferencyjne warunki kredytowania</li>
-                <li><strong>IAB 20-60:</strong> Branże standardowe - normalna ocena ryzyka</li>
-                <li><strong>IAB < 20:</strong> Branże wysokiego ryzyka - zaostrzony monitoring, wyższe marże</li>
-            </ul>
-
-            <h3>2. Limity sektorowe</h3>
-            <p>Maksymalna ekspozycja portfela na branżę:</p>
-            <div class="formula-box">
-                $$Limit_i = Base_{limit} \times \left(1 + \frac{IAB_i}{100}\right)$$
-            </div>
-
-            <h3>3. System wczesnego ostrzegania</h3>
-            <ul>
-                <li>Alert przy spadku IAB > 15 punktów w kwartale</li>
-                <li>Monitoring intensywny przy IAB < 10</li>
-                <li>Rewizja portfela przy długotrwałym trendzie spadkowym</li>
-            </ul>
-
-            <h3>4. Pricing kredytów</h3>
-            <p>Marża kredytu skorygowana o ryzyko branży:</p>
-            <div class="formula-box">
-                $$Margin = Base_{margin} \times \left(1 - 0.005 \times IAB_i\right)$$
-            </div>
-        </section>
-
-        <section>
-            <h2>📚 ŹRÓDŁA DANYCH</h2>
-            <ul>
-                <li>GUS Bank Danych Lokalnych - dane o firmach, wynikach finansowych</li>
-                <li>Krajowy Rejestr Zadłużonych - upadłości</li>
-                <li>Yahoo Finance</li>
-            </ul>
-        </section>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" class="back-link">← Powrót do dashboardu</a>
         </div>
-    </main>
 
-    <footer>
-        <p>Made with ❤️ for PKO BP</p>
-    </footer>
+        <div class="interpretation">
+            <h3>🎨 Interpretacja wyniku:</h3>
+            <p><strong>Wynik IAB mieści się w przedziale 0-100</strong></p>
+            <div>
+                <span class="score-range score-high">70-100: Niskie ryzyko / wysoka atrakcyjność</span>
+                <span class="score-range score-medium">40-70: Średnia atrakcyjność</span>
+                <span class="score-range score-low">0-40: Wysokie ryzyko / niska atrakcyjność</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🧮 KOMPONENTY WSKAŹNIKA</h2>
+
+        <div class="component-box">
+            <h4>1. Wskaźnik Zdrowia Sektora (SH) <span class="weight-tag">waga: 25%</span></h4>
+            <div class="formula-box">
+                \[
+                SH = 0.4 \cdot \frac{\Delta N}{\bar{N}} + 0.3 \cdot \text{survival\_rate} + 0.3 \cdot \frac{\Delta E}{\bar{E}}
+                \]
+            </div>
+            <div class="interpretation-box">
+                <strong>Interpretacja:</strong> Mierzy dynamikę wzrostu firm i stabilność zatrudnienia w branży.
+                <strong>Jak do tego doszliśmy:</strong> Obliczyliśmy zmiany liczby firm i zatrudnienia w czasie oraz uwzględniliśmy wskaźnik przeżywalności firm.
+            </div>
+        </div>
+
+        <div class="component-box">
+            <h4>2. Wskaźnik Rentowności (SP) <span class="weight-tag">waga: 30%</span></h4>
+            <div class="formula-box">
+                \[
+                SP = 0.5 \cdot P_R + 0.3 \cdot \left|\frac{\Delta R}{\bar{R}}\right| + 0.2 \cdot \frac{VA}{E}
+                \]
+            </div>
+            <div class="interpretation-box">
+                <strong>Interpretacja:</strong> Ocena zdolności branży do generowania zysku i wartości dodanej.
+                <strong>Jak do tego doszliśmy:</strong> Poprzez analizę rentowności w relacji do przychodów i wartości dodanej.
+            </div>
+        </div>
+
+        <div class="component-box">
+            <h4>3. Wskaźnik Odporności (SR) <span class="weight-tag">waga: 15%</span></h4>
+            <div class="formula-box">
+                $$SR = 0.6 \cdot N_{SP} + 0.4 \cdot N_{SH}$$
+            </div>
+            <div class="interpretation-box">
+                <strong>Interpretacja:</strong> Odporność branży na szoki makroekonomiczne.
+                <strong>Jak do tego doszliśmy:</strong> Standaryzacja komponentów SP i SH i agregacja wagowa.
+            </div>
+        </div>
+
+        <div class="component-box">
+            <h4>4. Wskaźnik Ryzyka (RR) <span class="weight-tag">waga: 10%</span></h4>
+            <div class="formula-box">
+                $$RR = 0.5 \cdot \frac{B + L}{N_{active}} + 0.3 \cdot \sigma_P + 0.2 \cdot AR$$
+            </div>
+            <div class="interpretation-box">
+                <strong>Interpretacja:</strong> Kwantyfikuje ryzyko upadłości i automatyzacji w branży.
+                <strong>Jak do tego doszliśmy:</strong> Analiza aktywnych firm, wskaźników zmienności i wskaźników ryzyka.
+            </div>
+        </div>
+
+        <div class="component-box">
+            <h4>5. Wpływ AI i Automatyzacji (AI) <span class="weight-tag">waga: 10%</span></h4>
+            <div class="formula-box">
+                $$AI = \begin{cases}3 \cdot \Delta_{AI} & \text{CREATOR} \\ 1.5 \cdot \Delta_{AI} & \text{SUPPORTED} \\ -1.5 \cdot |\Delta_{AI}| & \text{THREATENED} \\ 0 & \text{NEUTRAL} \end{cases}$$
+            </div>
+            <div class="interpretation-box">
+                <strong>Interpretacja:</strong> Ocena wpływu AI na branżę (pozytywny, neutralny lub zagrożenie).
+                <strong>Jak do tego doszliśmy:</strong> Skategoryzowano branże pod względem wpływu AI i przypisano wagi.
+            </div>
+        </div>
+
+        <div class="component-box">
+            <h4>6. Koszty Makroekonomiczne (MC) <span class="weight-tag">waga: 5%</span></h4>
+            <div class="formula-box">
+            \[
+            MC = \text{Impact for CO2, Energy, Interest, Commodity risks}
+            \]
+            </div>
+            <div class="interpretation-box">
+                <strong>Interpretacja:</strong> Uwzględnia makroekonomiczne ryzyka branży.
+                <strong>Jak do tego doszliśmy:</strong> Analiza ekspozycji branży na zmiany kosztów energii, CO2, stóp procentowych i surowców.
+            </div>
+        </div>
+
+        <div class="component-box">
+            <h4>7. Trendy Globalne (GT) <span class="weight-tag">waga: 5%</span></h4>
+            <div class="formula-box">
+                $$GT = \text{clip}(100 \cdot \Delta ETF, -10, 10)$$
+            </div>
+            <div class="interpretation-box">
+                <strong>Interpretacja:</strong> Oddziałuje na branżę poprzez trendy rynków globalnych.
+                <strong>Jak do tego doszliśmy:</strong> Analiza zmian ETF i ograniczenie wpływu skrajnych wartości.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>⚖️ SYSTEM WAG</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Komponent</th>
+                    <th>Waga</th>
+                    <th>Uzasadnienie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>SP</td><td>30%</td><td>Najważniejszy czynnik rentowności</td></tr>
+                <tr><td>SH</td><td>25%</td><td>Dynamika wzrostu firm</td></tr>
+                <tr><td>SR</td><td>15%</td><td>Odporność na szoki</td></tr>
+                <tr><td>RR</td><td>10%</td><td>Ryzyko upadłości</td></tr>
+                <tr><td>AI</td><td>10%</td><td>Wpływ automatyzacji</td></tr>
+                <tr><td>MC</td><td>5%</td><td>Koszty makroekonomiczne</td></tr>
+                <tr><td>GT</td><td>5%</td><td>Trendy globalne</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>📊 NORMALIZACJA I STANDARYZACJA</h2>
+        <p>Komponenty normalizowane do 0-100, następnie standaryzowane Z-Score:</p>
+        <div class="formula-box">$$Z = \frac{X - \mu}{\sigma}$$</div>
+    </section>
+
+    <section>
+        <h2>🎯 ZASTOSOWANIA PRAKTYCZNE</h2>
+        <ul>
+            <li>IAB &gt; 70: branże niskiego ryzyka</li>
+            <li>40 &lt; IAB &lt; 70: branże średnie</li>
+            <li>IAB &lt; 40: branże wysokiego ryzyka</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>📚 ŹRÓDŁA DANYCH</h2>
+        <ul>
+            <li>GUS - dane o firmach i finansach</li>
+            <li>Krajowy Rejestr Zadłużonych - upadłości</li>
+            <li>Yahoo Finance - ceny ETF i makro dane</li>
+        </ul>
+    </section>
+
+    <div style="text-align:center; margin-top:40px;">
+        <a href="index.html" class="back-link">← Powrót do dashboardu</a>
+    </div>
+</main>
+
+<footer>
+    <p>Made with ❤️ for PKO BP</p>
+</footer>
+
 </body>
 </html>
