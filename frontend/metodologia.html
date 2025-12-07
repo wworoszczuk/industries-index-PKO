@@ -286,7 +286,7 @@
                 <h4>6. Koszty Makroekonomiczne (MC) <span class="weight-tag">waga: 5%</span></h4>
                 
                 <div class="formula-box">
-                    $MC_i = \sum_{risk \in Risks_i} Impact(risk)$
+                    $$MC_i = \sum_{risk \in Risks_i} \text{Impact}(risk)$$
                     <p style="margin-top: 10px; font-size: 0.9rem;">gdzie Risks<sub>i</sub> = {CO2_INTENSIVE, ENERGY_SENSITIVE, INTEREST_SENSITIVE, COMMODITY_EXPOSED}</p>
                 </div>
 
@@ -335,7 +335,7 @@
                 <h4>7. Trendy Globalne (GT) <span class="weight-tag">waga: 5%</span></h4>
                 
                 <div class="formula-box">
-                    $GT_i = \text{min}(10, \text{max}(-10, 100 \times \Delta_{ETF_i}))$
+                    $$GT_i = \text{min}(10, \text{max}(-10, 100 \times \Delta_{ETF_i}))$$
                     <p style="margin-top: 10px; font-size: 0.9rem;">gdzie Δ<sub>ETF<sub>i</sub></sub> = zmiana ETF sektorowego w ostatnich 6 miesiącach</p>
                 </div>
 
@@ -363,7 +363,7 @@
                 </table>
 
                 <p><strong>Interpretacja:</strong> Ograniczony wpływ (±10 pkt max) globalnych trendów sektorowych. Uznajemy, że rynek amerykański jest predyktorem trendów globalnych. Branże rosnące na giełdach USA zazwyczaj rosną również w Polsce z opóźnieniem. Jednak lokalny kontekst (PL) ma większe znaczenie, stąd niska waga tego komponentu.</p>
-                <p><strong>Interpretacja:</strong> Polskie GPW nie posiada tak rozbudowanych ETFów, dlatego skorzystaliśmy z zagranicznych, jednakże sytuacja niektórych sektorów (np. wydobywczy) jest w USA zupełnie inna niż w Polsce. Dążyliśmy do zmniejszania współczynnika ETFów z zagranicy na rzecz tych polskich, gdzie to możliwe, aż ukazał się właściwy obraz sytuacji.</p>
+                <p><strong>Jak do tego doszliśmy:</strong> Polskie GPW nie posiada tak rozbudowanych ETFów, dlatego skorzystaliśmy z zagranicznych, jednakże sytuacja niektórych sektorów (np. wydobywczy) jest w USA zupełnie inna niż w Polsce. Dążyliśmy do zmniejszania współczynnika ETFów z zagranicy na rzecz tych polskich, gdzie to możliwe, aż ukazał się właściwy obraz sytuacji.</p>
             </div>
         </section>
 
