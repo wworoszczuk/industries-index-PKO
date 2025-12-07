@@ -3,691 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDEKS BRANŻ - PKO BP</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <title>Indeks Atrakcyjności Branżowej | PKO BP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        @font-face {
-            font-family: 'Mina';
-            src: url('../assets/mina/Mina-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
+        * { box-sizing: border-box; } 
+
+        :root {
+            --pko-blue: #003C71;
+            --pko-navy: #2D384D;
+            --pko-light: #F2F2F2;
+            --pko-red: #D31145;
+            --pko-green: #008A4B;
+            --pko-yellow: #B56800; /* Bardziej czytelny żółty */
+            --text-main: #333333;
+            --white: #FFFFFF;
         }
 
-        @font-face {
-            font-family: 'Mina';
-            src: url('../assets/mina/Mina-Bold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
+        body { font-family: 'Roboto', sans-serif; background-color: #F7F8FA; color: var(--text-main); margin: 0; padding: 0; overflow-x: hidden; }
+        
+        /* HEADER */
+        header { background-color: var(--pko-blue); color: var(--white); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo-area img { vertical-align: middle; }
+        
+        .header-meta { display: flex; align-items: center; gap: 15px; }
+        
+        .methodology-btn {
+            background: rgba(255,255,255,0.15); color: white; text-decoration: none; padding: 6px 15px; border-radius: 4px; font-size: 0.85rem; transition: background 0.2s; border: 1px solid rgba(255,255,255,0.2);
         }
+        .methodology-btn:hover { background: rgba(255,255,255,0.3); }
+        .date-badge { background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* LAYOUT */
+        .container { max-width: 1400px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 20px; height: calc(100vh - 80px); }
+        
+        .card { background: var(--white); border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; overflow: hidden; position: relative; }
+        h2 { font-size: 1.1rem; color: var(--pko-navy); margin-top: 0; border-bottom: 2px solid var(--pko-light); padding-bottom: 10px; flex-shrink: 0; }
 
-        body {
-            font-family: 'Mina', 'Segoe UI', Tahoma, sans-serif;
-            background: linear-gradient(135deg, #f7f8fa 0%, #e8eef5 100%);
-            color: #0B1C4A;
-            min-height: 100vh;
-        }
+        /* LISTS */
+        .industry-list { list-style: none; padding: 0; margin: 0; overflow-y: auto; flex-grow: 1; }
+        .industry-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 10px; border-bottom: 1px solid #eee; cursor: pointer; transition: background 0.2s; border-radius: 4px; }
+        .industry-item:hover { background-color: #f0f4f8; }
+        
+        .name-group { flex-grow: 1; padding: 0 10px; }
+        .ind-name { font-weight: 500; font-size: 0.9rem; display: block; line-height: 1.2; }
+        .ind-code { font-size: 0.75rem; color: #888; }
+        .rank-badge { font-weight: bold; font-size: 0.9rem; width: 30px; color: #999; }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #0B1C4A 0%, #1a3a6b 100%);
-            color: white;
-            padding: 30px 40px;
-            box-shadow: 0 4px 12px rgba(11, 28, 74, 0.15);
-        }
+        .score-badge { padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; min-width: 35px; text-align: center; }
+        .score-good { background: #E6F4EA; color: var(--pko-green); }
+        .score-med { background: #FFF4E5; color: var(--pko-yellow); }
+        .score-bad { background: #FDE7E9; color: var(--pko-red); }
 
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
+        /* DETAIL VIEW */
+        #detailView { display: flex; flex-direction: column; height: 100%; padding-bottom: 5px; }
+        .detail-header { text-align: center; margin-bottom: 15px; flex-shrink: 0; }
+        
+        /* NOWY WYGLĄD PUNKTACJI */
+        .score-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 15px;
+            margin: 10px 0;
         }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        #logo {
-            height: 50px;
-            width: auto;
-        }
-
-        .header-title h1 {
-            font-weight: bold;
-            letter-spacing: 3px;
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-
-        .header-title p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            letter-spacing: 1px;
-        }
-
-        .header-nav a {
+        .main-score-box {
+            font-size: 2.5rem;
+            font-weight: 700;
             color: white;
-            text-decoration: none;
-            padding: 12px 24px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+            background: #ccc; /* Default */
+            padding: 10px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .header-nav a:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Controls Panel */
-        .controls-panel {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .controls-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .control-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .control-group label {
-            font-weight: bold;
-            color: #0B1C4A;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-        }
-
-        .control-group select {
-            padding: 14px 16px;
-            border: 2px solid #e0e6ed;
-            border-radius: 10px;
-            font-family: 'Mina', sans-serif;
-            font-size: 1rem;
-            background: white;
-            color: #0B1C4A;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .control-group select:hover {
-            border-color: #0B1C4A;
-        }
-
-        .control-group select:focus {
-            outline: none;
-            border-color: #0B1C4A;
-            box-shadow: 0 0 0 3px rgba(11, 28, 74, 0.1);
-        }
-
-        /* Dashboard Grid */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .chart-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .chart-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .main-chart {
-            grid-column: span 12;
-        }
-
-        .stat-card {
-            grid-column: span 3;
-        }
-
-        .chart-header {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f0f4f8;
-        }
-
-        .chart-header h2 {
-            color: #0B1C4A;
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .chart-header p {
-            color: #6b7a90;
-            font-size: 0.95rem;
-        }
-
-        /* Stats Cards */
-        .stat-value {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #0B1C4A;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: #6b7a90;
+        .forecast-info {
+            text-align: left;
             font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: #666;
+            line-height: 1.4;
         }
+        .forecast-val { font-weight: bold; color: #333; }
 
-        .stat-change {
-            margin-top: 15px;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-        }
+        .chart-container { position: relative; flex-grow: 1; min-height: 250px; width: 100%; display: flex; justify-content: center; align-items: center; }
+        
+        .metrics-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; flex-shrink: 0; margin-bottom: 5px; }
+        .metric-box { background: #F8F9FA; padding: 15px 5px; border-radius: 6px; text-align: center; border: 1px solid #eee; }
+        .metric-val { display: block; font-weight: bold; font-size: 1.1rem; color: var(--pko-navy); }
+        .metric-lbl { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 5px; }
 
-        .stat-change.positive {
-            background: #e8f5e9;
-            color: #2e7d32;
-        }
+        .btn-full-list { margin-top: 15px; width: 100%; padding: 10px; background: #eee; border: none; border-radius: 4px; cursor: pointer; color: #555; font-weight: bold; transition: 0.2s; flex-shrink: 0; }
+        .btn-full-list:hover { background: #ddd; }
 
-        .stat-change.negative {
-            background: #ffebee;
-            color: #c62828;
-        }
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+        .modal-content { background-color: #fefefe; padding: 25px; border-radius: 8px; width: 90%; max-width: 800px; height: 85vh; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee; flex-shrink: 0; }
+        .modal-header h2 { margin: 0; border: none; padding: 0; }
+        .close { color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1; }
+        .close:hover { color: #000; }
+        .modal-list-container { overflow-y: auto; flex-grow: 1; padding-right: 5px; }
 
-        .stat-change.neutral {
-            background: #f0f4f8;
-            color: #6b7a90;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #aaa; }
 
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 60px;
-            color: #6b7a90;
-        }
-
-        .loading-spinner {
-            border: 4px solid #f0f4f8;
-            border-top: 4px solid #0B1C4A;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #6b7a90;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .stat-card {
-                grid-column: span 6;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .header-left {
-                flex-direction: column;
-            }
-
-            .stat-card {
-                grid-column: span 12;
-            }
-
-            .controls-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        footer { text-align: center; padding: 1rem; color: #888; font-size: 0.75rem; background: #F7F8FA; width: 100%; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="header-left">
-                <img src="assets/logo.svg" alt="Logo PKO BP" id="logo">
-                <div class="header-title">
-                    <h1>INDEKS BRANŻ</h1>
-                    <p>Dashboard analityczny</p>
+
+<header>
+    <div class="logo-area">
+        <img src="assets/logo.svg" alt="Logo PKO BP" id="logo" height="30px">
+    </div>
+    <div class="header-meta">
+        <a href="metodologia.html" class="methodology-btn">📖 Metodologia</a>
+        <div class="date-badge" id="dataDate">DANE: GUS F-01 (Q1-Q3 2025)</div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>🚀 Liderzy Rynku (Top 10)</h2>
+        <ul class="industry-list" id="topList">
+            <div class="loading">Ładowanie danych...</div>
+        </ul>
+        <button class="btn-full-list" onclick="openModal()">Zobacz pełny ranking</button>
+    </div>
+
+    <div class="card" style="border-top: 4px solid var(--pko-blue);">
+        <div id="detailView" style="display:none;"> 
+            <div class="detail-header">
+                <h3 id="detName" style="margin:0; font-size:1.4rem; color: var(--pko-navy);">--</h3>
+                <span id="detCode" style="color:#888; font-size:0.9rem;">PKD --</span>
+                
+                <div class="score-container">
+                    <div class="main-score-box" id="detScore">--</div>
+                    <div class="forecast-info">
+                        Prognoza: <span class="forecast-val" id="detForecast">--</span><br>
+                        Perspektywa: <span id="detOutlook" style="font-weight:bold;">--</span>
+                    </div>
                 </div>
             </div>
-            <div class="header-nav">
-                <a href="./metodologia.html">METODOLOGIA</a>
-            </div>
-        </div>
-    </header>
 
-    <div class="container">
-        <!-- Controls Panel -->
-        <div class="controls-panel">
-            <div class="controls-grid">
-                <div class="control-group">
-                    <label for="sectionSelect">SEKCJA PKD</label>
-                    <select id="sectionSelect">
-                        <option value="">Wszystkie sekcje</option>
-                    </select>
+            <div class="chart-container">
+                <canvas id="radarChart"></canvas>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <span class="metric-val" id="detFirms">--</span>
+                    <span class="metric-lbl">Liczba Firm (F-01)</span>
                 </div>
-                <div class="control-group">
-                    <label for="divisionSelect">DZIAŁ PKD</label>
-                    <select id="divisionSelect">
-                        <option value="">Wybierz dział...</option>
-                    </select>
+                <div class="metric-box">
+                    <span class="metric-val" id="detFailures">--</span>
+                    <span class="metric-lbl">Upadłości (2024)</span>
                 </div>
-                <div class="control-group">
-                    <label for="yearRange">ZAKRES LAT</label>
-                    <select id="yearRange">
-                        <option value="all">2018-2024 (wszystkie)</option>
-                        <option value="recent">2021-2024 (ostatnie 3 lata)</option>
-                        <option value="2024">2024 (bieżący rok)</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <!-- Stats Cards -->
-        <div class="dashboard-grid">
-            <div class="chart-card stat-card">
-                <div class="stat-value" id="totalBankruptcies">-</div>
-                <div class="stat-label">Całkowita liczba upadłości</div>
-                <div class="stat-change neutral" id="bankruptcyChange">-</div>
-            </div>
-
-            <div class="chart-card stat-card">
-                <div class="stat-value" id="avgBankruptcies">-</div>
-                <div class="stat-label">Średnia rocznie</div>
-                <div class="stat-change neutral" id="avgChange">-</div>
-            </div>
-
-            <div class="chart-card stat-card">
-                <div class="stat-value" id="peakYear">-</div>
-                <div class="stat-label">Rok szczytowy</div>
-                <div class="stat-change neutral" id="peakValue">-</div>
-            </div>
-
-            <div class="chart-card stat-card">
-                <div class="stat-value" id="trendIndicator">-</div>
-                <div class="stat-label">Trend</div>
-                <div class="stat-change neutral" id="trendValue">-</div>
-            </div>
-        </div>
-
-        <!-- Main Chart -->
-        <div class="dashboard-grid">
-            <div class="chart-card main-chart">
-                <div class="chart-header">
-                    <h2>Liczba upadłości firm w czasie</h2>
-                    <p id="chartSubtitle">Analiza trendów w wybranym dziale PKD</p>
-                </div>
-                <div style="position: relative; height: 450px;">
-                    <canvas id="bankruptcyChart"></canvas>
+                <div class="metric-box">
+                    <span class="metric-val" id="detRos">-- %</span>
+                    <span class="metric-lbl">Rentowność Netto (ROS)</span>
                 </div>
             </div>
         </div>
-
-        <!-- Loading Indicator -->
-        <div class="loading" id="loadingIndicator" style="display: none;">
-            <div class="loading-spinner"></div>
-            <p>Ładowanie danych...</p>
+        <div id="welcomeMsg" style="text-align:center; padding:50px; color:#888; display:flex; align-items:center; justify-content:center; height:100%;">
+            <div>
+                <h3 style="color:#ccc;">Wybierz branżę</h3>
+                <p>Kliknij na element z listy, aby zobaczyć analizę.</p>
+            </div>
         </div>
     </div>
 
-    <footer>
-        <p>Made with ❤️ for PKO BP | Dane: PKD 2025 | System wczesnego ostrzegania dla sektora bankowego</p>
-    </footer>
+    <div class="card">
+        <h2>⚠️ Obszary Ryzyka</h2>
+        <ul class="industry-list" id="botList">
+            <div class="loading">Ładowanie danych...</div>
+        </ul>
+    </div>
+</div>
 
-    <script>
-        let wskaznikiData = null;
-        let pkdData = null;
-        let currentChart = null;
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+        <h2>Pełny Ranking Branż (Wg IAB)</h2>
+        <span class="close" onclick="closeModal()">&times;</span>
+    </div>
+    <div class="modal-list-container">
+        <ul class="industry-list" id="fullList"></ul>
+    </div>
+  </div>
+</div>
 
-        // Load data files
-        async function loadData() {
-            try {
-                document.getElementById('loadingIndicator').style.display = 'block';
-                
-                const [wskaznikiResponse, pkdResponse] = await Promise.all([
-                    fetch('../data/wskazniki.json'),
-                    fetch('../data/PKD.json')
-                ]);
+<div style="height: 50px;"></div>
 
-                wskaznikiData = await wskaznikiResponse.json();
-                pkdData = await pkdResponse.json();
+<script>
+    let myRadarChart = null;
+    let allData = [];
 
-                populateSectionSelect();
-                populateDivisionSelect();
-                updateDashboard();
+    async function fetchData() {
+        try {
+            const response = await fetch('../output/iab_data.json'); 
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            allData = await response.json();
+            
+            const validData = allData.filter(d => d.iab !== null);
+            validData.sort((a, b) => b.iab - a.iab);
+            initDashboard(validData);
 
-                document.getElementById('loadingIndicator').style.display = 'none';
-            } catch (error) {
-                console.error('Błąd ładowania danych:', error);
-                document.getElementById('loadingIndicator').innerHTML = 
-                    '<p style="color: #c62828;">Błąd wczytywania danych. Sprawdź ścieżki do plików JSON.</p>';
-            }
+        } catch (error) {
+            console.error(error);
+            document.getElementById('topList').innerHTML = "Błąd danych.";
         }
+    }
 
-        // Populate section dropdown
-        function populateSectionSelect() {
-            const select = document.getElementById('sectionSelect');
-            const sections = pkdData.PKD.sections;
+    function initDashboard(data) {
+        renderList('topList', data.slice(0, 10), true);
+        renderList('botList', data.slice().reverse().slice(0, 10), false);
+        renderList('fullList', data, true);
+
+        if (data.length > 0) loadDetail(data[0]);
+    }
+
+    function renderList(elementId, items, isTop) {
+        const list = document.getElementById(elementId);
+        list.innerHTML = '';
+        
+        items.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = 'industry-item';
+            li.onclick = () => { closeModal(); loadDetail(item); };
             
-            for (const [code, section] of Object.entries(sections)) {
-                const option = document.createElement('option');
-                option.value = code;
-                option.textContent = `${code} - ${section.name}`;
-                select.appendChild(option);
-            }
-        }
-
-        // Populate division dropdown based on selected section
-        function populateDivisionSelect(sectionCode = null) {
-            const select = document.getElementById('divisionSelect');
-            select.innerHTML = '<option value="">Wszystkie działy</option>';
-
-            let divisions = {};
-
-            if (sectionCode) {
-                divisions = pkdData.PKD.sections[sectionCode].divisions;
-            } else {
-                // All divisions from all sections
-                for (const section of Object.values(pkdData.PKD.sections)) {
-                    Object.assign(divisions, section.divisions);
-                }
-            }
-
-            for (const [code, name] of Object.entries(divisions).sort()) {
-                const option = document.createElement('option');
-                option.value = code;
-                option.textContent = `${code} - ${name}`;
-                select.appendChild(option);
-            }
-        }
-
-        // Update dashboard based on selections
-        function updateDashboard() {
-            const divisionCode = document.getElementById('divisionSelect').value;
-            const yearRange = document.getElementById('yearRange').value;
-
-            if (!divisionCode) {
-                // Show aggregate data
-                updateAggregateView(yearRange);
-            } else {
-                // Show specific division data
-                updateDivisionView(divisionCode, yearRange);
-            }
-        }
-
-        // Update view for specific division
-        function updateDivisionView(divisionCode, yearRange) {
-            const divisionData = wskaznikiData.divisions[divisionCode];
-            if (!divisionData) return;
-
-            const years = getYearsInRange(yearRange);
-            const bankruptcies = years.map(year => 
-                divisionData.years[year]?.firms?.bankruptcies || 0
-            );
-
-            // Update stats
-            const total = bankruptcies.reduce((a, b) => a + b, 0);
-            const avg = (total / years.length).toFixed(1);
-            const maxValue = Math.max(...bankruptcies);
-            const maxYear = years[bankruptcies.indexOf(maxValue)];
+            let badgeClass = 'score-med';
+            if (item.iab >= 70) badgeClass = 'score-good';
+            if (item.iab < 40) badgeClass = 'score-bad';
             
-            const lastYear = bankruptcies[bankruptcies.length - 1];
-            const prevYear = bankruptcies[bankruptcies.length - 2];
-            const change = prevYear > 0 ? (((lastYear - prevYear) / prevYear) * 100).toFixed(1) : 0;
+            let rank = "#";
+            if (elementId === 'topList' || elementId === 'fullList') rank = index + 1;
+            else if (elementId === 'botList') rank = allData.length - index; 
 
-            document.getElementById('totalBankruptcies').textContent = total;
-            document.getElementById('avgBankruptcies').textContent = avg;
-            document.getElementById('peakYear').textContent = maxYear;
-            document.getElementById('peakValue').textContent = `${maxValue} upadłości`;
-            
-            updateChangeIndicator('bankruptcyChange', change, '%');
-            updateTrendIndicator(bankruptcies);
-
-            // Update chart
-            document.getElementById('chartSubtitle').textContent = 
-                `${divisionCode} - ${divisionData.name}`;
-            
-            updateChart(years, bankruptcies, divisionData.name);
-        }
-
-        // Update view for aggregate data
-        function updateAggregateView(yearRange) {
-            const years = getYearsInRange(yearRange);
-            const aggregatedData = {};
-
-            // Aggregate all divisions
-            years.forEach(year => {
-                aggregatedData[year] = 0;
-                for (const division of Object.values(wskaznikiData.divisions)) {
-                    const value = division.years[year]?.firms?.bankruptcies;
-                    if (value !== null && value !== undefined) {
-                        aggregatedData[year] += value;
-                    }
-                }
-            });
-
-            const bankruptcies = years.map(year => aggregatedData[year]);
-            const total = bankruptcies.reduce((a, b) => a + b, 0);
-            const avg = (total / years.length).toFixed(1);
-            const maxValue = Math.max(...bankruptcies);
-            const maxYear = years[bankruptcies.indexOf(maxValue)];
-            
-            const lastYear = bankruptcies[bankruptcies.length - 1];
-            const prevYear = bankruptcies[bankruptcies.length - 2];
-            const change = prevYear > 0 ? (((lastYear - prevYear) / prevYear) * 100).toFixed(1) : 0;
-
-            document.getElementById('totalBankruptcies').textContent = total;
-            document.getElementById('avgBankruptcies').textContent = avg;
-            document.getElementById('peakYear').textContent = maxYear;
-            document.getElementById('peakValue').textContent = `${maxValue} upadłości`;
-            
-            updateChangeIndicator('bankruptcyChange', change, '%');
-            updateTrendIndicator(bankruptcies);
-
-            document.getElementById('chartSubtitle').textContent = 
-                'Wszystkie działy PKD - agregowane dane';
-            
-            updateChart(years, bankruptcies, 'Wszystkie branże');
-        }
-
-        // Get years based on range selection
-        function getYearsInRange(range) {
-            const allYears = ['2018', '2019', '2020', '2021', '2022', '2023', '2024'];
-            
-            switch(range) {
-                case 'recent':
-                    return ['2021', '2022', '2023', '2024'];
-                case '2024':
-                    return ['2024'];
-                default:
-                    return allYears;
-            }
-        }
-
-        // Update change indicator
-        function updateChangeIndicator(elementId, change, suffix = '') {
-            const element = document.getElementById(elementId);
-            const changeNum = parseFloat(change);
-            
-            if (changeNum > 0) {
-                element.className = 'stat-change negative';
-                element.textContent = `▲ ${change}${suffix} wzrost`;
-            } else if (changeNum < 0) {
-                element.className = 'stat-change positive';
-                element.textContent = `▼ ${Math.abs(change)}${suffix} spadek`;
-            } else {
-                element.className = 'stat-change neutral';
-                element.textContent = 'Bez zmian';
-            }
-        }
-
-        // Update trend indicator
-        function updateTrendIndicator(data) {
-            const trend = calculateTrend(data);
-            const trendElement = document.getElementById('trendIndicator');
-            const trendValueElement = document.getElementById('trendValue');
-            
-            if (trend > 0.1) {
-                trendElement.textContent = '📈';
-                trendValueElement.className = 'stat-change negative';
-                trendValueElement.textContent = 'Trend rosnący';
-            } else if (trend < -0.1) {
-                trendElement.textContent = '📉';
-                trendValueElement.className = 'stat-change positive';
-                trendValueElement.textContent = 'Trend malejący';
-            } else {
-                trendElement.textContent = '➡️';
-                trendValueElement.className = 'stat-change neutral';
-                trendValueElement.textContent = 'Trend stabilny';
-            }
-        }
-
-        // Calculate trend (simple linear regression slope)
-        function calculateTrend(data) {
-            const n = data.length;
-            const xMean = (n - 1) / 2;
-            const yMean = data.reduce((a, b) => a + b, 0) / n;
-            
-            let numerator = 0;
-            let denominator = 0;
-            
-            for (let i = 0; i < n; i++) {
-                numerator += (i - xMean) * (data[i] - yMean);
-                denominator += (i - xMean) ** 2;
-            }
-            
-            return denominator !== 0 ? numerator / denominator : 0;
-        }
-
-        // Update chart
-        function updateChart(labels, data, label) {
-            const ctx = document.getElementById('bankruptcyChart').getContext('2d');
-            
-            if (currentChart) {
-                currentChart.destroy();
-            }
-
-            currentChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: label,
-                        data: data,
-                        borderColor: '#0B1C4A',
-                        backgroundColor: 'rgba(11, 28, 74, 0.1)',
-                        borderWidth: 3,
-                        fill: true,
-                        tension: 0.4,
-                        pointRadius: 6,
-                        pointHoverRadius: 8,
-                        pointBackgroundColor: '#0B1C4A',
-                        pointBorderColor: '#fff',
-                        pointBorderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            backgroundColor: 'rgba(11, 28, 74, 0.95)',
-                            padding: 12,
-                            titleFont: { size: 14, weight: 'bold' },
-                            bodyFont: { size: 13 },
-                            cornerRadius: 8
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            },
-                            ticks: {
-                                font: { size: 12, family: 'Mina' },
-                                color: '#6b7a90'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                font: { size: 12, family: 'Mina', weight: 'bold' },
-                                color: '#0B1C4A'
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        // Event listeners
-        document.getElementById('sectionSelect').addEventListener('change', (e) => {
-            populateDivisionSelect(e.target.value || null);
-            updateDashboard();
+            li.innerHTML = `
+                <span class="rank-badge">${rank}</span>
+                <div class="name-group">
+                    <span class="ind-name">${item.nazwa}</span>
+                    <span class="ind-code">PKD ${item.pkd}</span>
+                </div>
+                <div class="score-badge ${badgeClass}">${item.iab.toFixed(0)}</div>
+            `;
+            list.appendChild(li);
         });
+    }
 
-        document.getElementById('divisionSelect').addEventListener('change', updateDashboard);
-        document.getElementById('yearRange').addEventListener('change', updateDashboard);
+    function loadDetail(item) {
+        document.getElementById('welcomeMsg').style.display = 'none';
+        document.getElementById('detailView').style.display = 'flex';
 
-        // Initialize
-        loadData();
-    </script>
+        document.getElementById('detName').innerText = item.nazwa;
+        document.getElementById('detCode').innerText = `PKD ${item.pkd} | Sekcja ${item.sekcja}`;
+        
+        // --- NOWY SPOSÓB WYŚWIETLANIA PUNKTACJI ---
+        const scoreBox = document.getElementById('detScore');
+        scoreBox.innerText = item.iab.toFixed(1);
+        
+        // Kolorowanie tła wyniku
+        if (item.iab >= 70) scoreBox.style.background = 'var(--pko-green)';
+        else if (item.iab < 40) scoreBox.style.background = 'var(--pko-red)';
+        else scoreBox.style.background = 'var(--pko-yellow)';
+
+        // Prognoza
+        document.getElementById('detForecast').innerText = item.iab_forecast ? item.iab_forecast.toFixed(1) : '-';
+        
+        // Outlook
+        const outlookEl = document.getElementById('detOutlook');
+        outlookEl.innerText = item.outlook || '-';
+        if (item.outlook && item.outlook.includes('Pozytywna')) outlookEl.style.color = 'var(--pko-green)';
+        else if (item.outlook && item.outlook.includes('Negatywna')) outlookEl.style.color = 'var(--pko-red)';
+        else outlookEl.style.color = '#666';
+
+        // Reszta
+        document.getElementById('detFirms').innerText = item.firmy.toLocaleString('pl-PL');
+        document.getElementById('detFailures').innerText = item.upadlosci.toLocaleString('pl-PL');
+        
+        const rosVal = item.finanse_ros !== undefined ? item.finanse_ros : 0;
+        const rosEl = document.getElementById('detRos');
+        rosEl.innerText = `${rosVal.toFixed(1)}%`;
+        rosEl.style.color = rosVal >= 0 ? 'var(--pko-green)' : 'var(--pko-red)';
+
+        setTimeout(() => updateChart(item), 50);
+    }
+
+    function updateChart(item) {
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        const c = item.components;
+        if (myRadarChart) myRadarChart.destroy();
+
+        myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Bezpieczeństwo', 'Rentowność', 'Płynność', 'Ryzyko', 'Innowacje', 'Makro', 'Trendy'],
+                datasets: [{
+                    label: 'Wynik punktowy',
+                    data: [c.SH, c.SP, 50, 100 - c.RR, c.AI, c.MC, c.GT],
+                    backgroundColor: 'rgba(0, 60, 113, 0.2)',
+                    borderColor: '#003C71',
+                    pointBackgroundColor: '#D31145',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { r: { suggestedMin: 0, suggestedMax: 100, ticks: { display: false } } },
+                plugins: { legend: { display: false } }
+            }
+        });
+    }
+
+    function openModal() { document.getElementById("myModal").style.display = "flex"; document.body.style.overflow = "hidden"; }
+    function closeModal() { document.getElementById("myModal").style.display = "none"; document.body.style.overflow = "auto"; }
+    window.onclick = function(event) { if (event.target == document.getElementById("myModal")) closeModal(); }
+
+    fetchData();
+</script>
+
 </body>
 </html>

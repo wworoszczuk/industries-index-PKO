@@ -1,0 +1,196 @@
+{
+  "PKD": {
+    "sections": {
+      "A": {
+        "name": "ROLNICTWO",
+        "divisions": {
+          "LEŚNICTWO": "ŁOWIECTWO I RYBACTWO"
+        }
+      },
+      "B": {
+        "name": "GÓRNICTWO I WYDOBYWANIE",
+        "divisions": {
+          "05": "Wydobywanie węgla kamiennego i węgla brunatnego (lignitu)",
+          "06": "Górnictwo ropy naftowej i gazu ziemnego",
+          "07": "Górnictwo rud metali",
+          "08": "Pozostałe górnictwo i wydobywanie",
+          "09": "Działalność usługowa wspomagająca górnictwo i wydobywanie"
+        }
+      },
+      "C": {
+        "name": "PRZETWÓRSTWO PRZEMYSŁOWE",
+        "divisions": {
+          "10": "Produkcja artykułów spożywczych",
+          "11": "Produkcja napojów",
+          "12": "Produkcja wyrobów tytoniowych",
+          "13": "Produkcja wyrobów tekstylnych",
+          "14": "Produkcja odzieży",
+          "15": "Produkcja skóry i wyrobów ze skóry wyprawionej, produkcja wyrobów z innych materiałów",
+          "16": "Produkcja wyrobów z drewna i korka (z wyjątkiem mebli); produkcja wyrobów z słomy i materiałów używanych do wyplatania",
+          "17": "Produkcja papieru i wyrobów z papieru",
+          "18": "Poligrafia i reprodukcja zapisanych nośników informacji",
+          "19": "Wytwarzanie i przetwarzanie koksu oraz produktów rafinacji ropy naftowej",
+          "20": "Produkcja chemikaliów i wyrobów chemicznych",
+          "21": "Produkcja podstawowych substancji farmaceutycznych oraz leków i pozostałych wyrobów farmaceutycznych",
+          "22": "Produkcja wyrobów z gumy i tworzyw sztucznych",
+          "23": "Produkcja wyrobów z pozostałych mineralnych surowców niemetalicznych",
+          "24": "Produkcja metali",
+          "25": "Produkcja metalowych wyrobów gotowych, z wyjątkiem maszyn i urządzeń",
+          "26": "Produkcja komputerów, wyrobów elektronicznych i optycznych",
+          "27": "Produkcja urządzeń elektrycznych",
+          "28": "Produkcja maszyn i urządzeń, gdzie indziej niesklasyfikowana",
+          "29": "Produkcja pojazdów silnikowych, przyczep i naczep",
+          "30": "Produkcja pozostałego sprzętu transportowego",
+          "31": "Produkcja mebli",
+          "32": "Pozostała produkcja wyrobów",
+          "33": "Naprawa"
+        }
+      },
+      "D": {
+        "name": "WYTWARZANIE I ZAOPATRYWANIE W ENERGIĘ ELEKTRYCZNĄ, GAZ, PARĘ WODNĄ I POWIETRZE DO UKŁADÓW KLIMATYZACYJNYCH",
+        "divisions": {
+          "35": "Wytwarzanie i zaopatrywanie w energię elektryczną, gaz, parę wodną i powietrze do układów klimatyzacyjnych"
+        }
+      },
+      "E": {
+        "name": "DOSTAWA WODY; GOSPODAROWANIE ŚCIEKAMI I ODPADAMI ORAZ DZIAŁALNOŚĆ ZWIĄZANA Z REKULTYWACJĄ",
+        "divisions": {
+          "36": "Pobór, uzdatnianie i dostarczanie wody",
+          "37": "Odpowadzanie i oczyszczanie ścieków",
+          "38": "Działalność związana ze zbieraniem, odzyskiem i unieszkodliwianiem odpadów",
+          "39": "Działalność związana z rekultywacją i pozostała działalność usługowa związana z gospodarką odpadami"
+        }
+      },
+      "F": {
+        "name": "BUDOWNICTWO",
+        "divisions": {
+          "41": "Roboty budowlane związane ze wznoszeniem budynków mieszkalnych i niemieszkalnych",
+          "42": "Roboty związane z budową obiektów inżynierii lądowej i wodnej",
+          "43": "Roboty budowlane specjalistyczne"
+        }
+      },
+      "G": {
+        "name": "HANDEL HURTOWY I DETALICZNY; NAPRAWA POJAZDÓW SAMOCHODOWYCH, WŁĄCZAJĄC MOTOCYKLE",
+        "divisions": {
+          "46": "Handel hurtowy (z wyjątkiem handlu pojazdami samochodowymi)",
+          "47": "Handel detaliczny (z wyjątkiem handlu pojazdami samochodowymi)",
+          "45": "Handel hurtowy i detaliczny; naprawa pojazdów samochodowych i motocykli"
+        }
+      },
+      "H": {
+        "name": "TRANSPORT I GOSPODARKA MAGAZYNOWA",
+        "divisions": {
+          "49": "Transport lądowy oraz transport rurociągowy",
+          "50": "Transport wodny",
+          "51": "Transport lotniczy",
+          "52": "Magazynowanie, przechowywanie i działalność usługowa wspomagająca transport",
+          "53": "Działalność pocztowa i kurierska"
+        }
+      },
+      "I": {
+        "name": "DZIAŁALNOŚĆ ZWIĄZANA Z ZAKWATEROWANIEM I USŁUGAMI GASTRONOMICZNYMI",
+        "divisions": {
+          "55": "Zakwaterowanie",
+          "56": "Działalność usługowa związana z wyżywieniem"
+        }
+      },
+      "J": {
+        "name": "DZIAŁALNOŚĆ WYDAWNICZA I NADAWCZA ORAZ ZWIĄZANA Z PRODUKCJĄ I DYSTRYBUCJĄ TREŚCI",
+        "divisions": {
+          "58": "Działalność wydawnicza",
+          "59": "Działalność związana z produkcją filmów, nagrań wideo, programów telewizyjnych, nagrań dźwiękowych i muzycznych",
+          "60": "Nadawanie programów ogólnodostępnych i abonamentowych; działalność agencji informacyjnych i pozostała działalność związana z dystrybucją treści"
+        }
+      },
+      "K": {
+        "name": "TELEKOMUNIKACJA, PROGRAMOWANIE, DORADZTWO IT, INFRASTRUKTURA I INNE USŁUGI INFORMACYJNE",
+        "divisions": {
+          "61": "Telekomunikacja",
+          "62": "Działalność związana z programowaniem, doradztwem w zakresie informatyki i działalnością powiązaną",
+          "63": "Działalność usługowa w zakresie infrastruktury obliczeniowej, przetwarzania danych, zarządzania stronami internetowymi (hosting) i pozostała działalność usługowa w zakresie informacji"
+        }
+      },
+      "L": {
+        "name": "DZIAŁALNOŚĆ FINANSOWA I UBEZPIECZENIOWA (ORAZ OBSŁUGA RYNKU NIERUCHOMOŚCI)",
+        "divisions": {
+          "64": "Finansowa działalność usługowa, z wyłączeniem ubezpieczeń i funduszy emerytalnych",
+          "65": "Działalność w zakresie ubezpieczeń, reasekuracji oraz funduszy emerytalnych, z wyłączeniem obowiązkowego ubezpieczenia społecznego",
+          "66": "Działalność wspomagająca usługi finansowe, ubezpieczenia i fundusze emerytalne"
+        }
+      },
+      "M": {
+        "name": "DZIAŁALNOŚĆ ZWIĄZANA Z OBSŁUGĄ RYNKU NIERUCHOMOŚCI",
+        "divisions": {
+          "68": "Działalność związana z obsługą rynku nieruchomości"
+        }
+      },
+      "N": {
+        "name": "DZIAŁALNOŚĆ PROFESJONALNA, NAUKOWA I TECHNICZNA",
+        "divisions": {
+          "69": "Działalność prawnicza",
+          "70": "Działalność central (head offices) oraz doradztwo związane z zarządzaniem",
+          "71": "Działalność w zakresie architektury i inżynierii; badania i analizy techniczne",
+          "72": "Badania naukowe i prace rozwojowe",
+          "73": "Działalność w zakresie reklamy, badań rynku i public relations",
+          "74": "Pozostała działalność profesjonalna, naukowa i techniczna",
+          "75": "Działalność weterynaryjna"
+        }
+      },
+      "O": {
+        "name": "DZIAŁALNOŚĆ W ZAKRESIE USŁUG ADMINISTROWANIA I DZIAŁALNOŚĆ WSPIERAJĄCA",
+        "divisions": {
+          "77": "Wynajem i dzierżawa",
+          "78": "Działalność związana z zatrudnieniem",
+          "79": "Działalność organizatorów turystyki",
+          "80": "Działalność detektywistyczna i ochroniarska",
+          "81": "Działalność usługowa związana z utrzymaniem porządku w budynkach i zagospodarowaniem terenów zieleni",
+          "82": "Działalność administracyjna obsługi biura i pozostała działalność wspomagająca prowadzenie działalności gospodarczej"
+        }
+      },
+      "P": {
+        "name": "ADMINISTRACJA PUBLICZNA I OBRONA NARODOWA; OBOWIĄZKOWE UBEZPIECZENIA SPOŁECZNE",
+        "divisions": {
+          "84": "Administracja publiczna i obrona narodowa; obowiązkowe ubezpieczenia społeczne"
+        }
+      },
+      "Q": {
+        "name": "EDUKACJA",
+        "divisions": {
+          "85": "Edukacja"
+        }
+      },
+      "R": {
+        "name": "OPIEKA ZDROWOTNA I POMOC SPOŁECZNA",
+        "divisions": {
+          "86": "Opieka zdrowotna",
+          "87": "Pomoc społeczna z zakwaterowaniem",
+          "88": "Pomoc społeczna bez zakwaterowania"
+        }
+      },
+      "S": {
+        "name": "DZIAŁALNOŚĆ ZWIĄZANA Z KULTURĄ, SPORTEM I REKREACJĄ",
+        "divisions": {
+          "90": "Działalność twórcza i działalność związana z wystawianiem przedstawień artystycznych",
+          "91": "Działalność bibliotek, archiwów, muzeów oraz pozostała działalność związana z kulturą",
+          "92": "Działalność związana z grami hazardowymi",
+          "93": "Działalność sportowa, rozrywkowa i rekreacyjna"
+        }
+      },
+      "T": {
+        "name": "POZOSTAŁA DZIAŁALNOŚĆ USŁUGOWA",
+        "divisions": {
+          "94": "Działalność organizacji członkowskich",
+          "95": "Naprawa i konserwacja komputerów, artykułów użytku osobistego i domowego oraz pojazdów silnikowych (w tym motocykli)",
+          "96": "Działalność usługowa indywidualna"
+        }
+      },
+      "U": {
+        "name": "GOSPODARSTWA DOMOWE ZATRUDNIAJĄCE PRACOWNIKÓW ORAZ GOSPODARSTWA DOMOWE PRODUKUJĄCE WYROBY I ŚWIADCZĄCE USŁUGI NA WŁASNE POTRZEBY",
+        "divisions": {
+          "97": "Gospodarstwa domowe zatrudniające pracowników",
+          "98": "Gospodarstwa domowe produkujące wyroby i świadczące usługi na własne potrzeby"
+        }
+      }
+    }
+  }
+}

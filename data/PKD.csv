@@ -1,0 +1,88 @@
+Section Code;Section Name;Division Code;Division Name
+A;ROLNICTWO, LEŚNICTWO, ŁOWIECTWO I RYBACTWO;01;Uprawy rolne, chów i hodowla zwierząt, łowiectwo i działalność usługowa z tym związana
+A;ROLNICTWO, LEŚNICTWO, ŁOWIECTWO I RYBACTWO;02;Leśnictwo i pozyskiwanie drewna
+A;ROLNICTWO, LEŚNICTWO, ŁOWIECTWO I RYBACTWO;03;Rybactwo
+B;GÓRNICTWO I WYDOBYWANIE;05;Wydobywanie węgla kamiennego i węgla brunatnego (lignitu)
+B;GÓRNICTWO I WYDOBYWANIE;06;Górnictwo ropy naftowej i gazu ziemnego
+B;GÓRNICTWO I WYDOBYWANIE;07;Górnictwo rud metali
+B;GÓRNICTWO I WYDOBYWANIE;08;Pozostałe górnictwo i wydobywanie
+B;GÓRNICTWO I WYDOBYWANIE;09;Działalność usługowa wspomagająca górnictwo i wydobywanie
+C;PRZETWÓRSTWO PRZEMYSŁOWE;10;Produkcja artykułów spożywczych
+C;PRZETWÓRSTWO PRZEMYSŁOWE;11;Produkcja napojów
+C;PRZETWÓRSTWO PRZEMYSŁOWE;12;Produkcja wyrobów tytoniowych
+C;PRZETWÓRSTWO PRZEMYSŁOWE;13;Produkcja wyrobów tekstylnych
+C;PRZETWÓRSTWO PRZEMYSŁOWE;14;Produkcja odzieży
+C;PRZETWÓRSTWO PRZEMYSŁOWE;15;Produkcja skóry i wyrobów ze skóry wyprawionej, produkcja wyrobów z innych materiałów
+C;PRZETWÓRSTWO PRZEMYSŁOWE;16;Produkcja wyrobów z drewna i korka (z wyjątkiem mebli); produkcja wyrobów z słomy i materiałów używanych do wyplatania
+C;PRZETWÓRSTWO PRZEMYSŁOWE;17;Produkcja papieru i wyrobów z papieru
+C;PRZETWÓRSTWO PRZEMYSŁOWE;18;Poligrafia i reprodukcja zapisanych nośników informacji
+C;PRZETWÓRSTWO PRZEMYSŁOWE;19;Wytwarzanie i przetwarzanie koksu oraz produktów rafinacji ropy naftowej
+C;PRZETWÓRSTWO PRZEMYSŁOWE;20;Produkcja chemikaliów i wyrobów chemicznych
+C;PRZETWÓRSTWO PRZEMYSŁOWE;21;Produkcja podstawowych substancji farmaceutycznych oraz leków i pozostałych wyrobów farmaceutycznych
+C;PRZETWÓRSTWO PRZEMYSŁOWE;22;Produkcja wyrobów z gumy i tworzyw sztucznych
+C;PRZETWÓRSTWO PRZEMYSŁOWE;23;Produkcja wyrobów z pozostałych mineralnych surowców niemetalicznych
+C;PRZETWÓRSTWO PRZEMYSŁOWE;24;Produkcja metali
+C;PRZETWÓRSTWO PRZEMYSŁOWE;25;Produkcja metalowych wyrobów gotowych, z wyjątkiem maszyn i urządzeń
+C;PRZETWÓRSTWO PRZEMYSŁOWE;26;Produkcja komputerów, wyrobów elektronicznych i optycznych
+C;PRZETWÓRSTWO PRZEMYSŁOWE;27;Produkcja urządzeń elektrycznych
+C;PRZETWÓRSTWO PRZEMYSŁOWE;28;Produkcja maszyn i urządzeń, gdzie indziej niesklasyfikowana
+C;PRZETWÓRSTWO PRZEMYSŁOWE;29;Produkcja pojazdów silnikowych, przyczep i naczep
+C;PRZETWÓRSTWO PRZEMYSŁOWE;30;Produkcja pozostałego sprzętu transportowego
+C;PRZETWÓRSTWO PRZEMYSŁOWE;31;Produkcja mebli
+C;PRZETWÓRSTWO PRZEMYSŁOWE;32;Pozostała produkcja wyrobów
+C;PRZETWÓRSTWO PRZEMYSŁOWE;33;Naprawa, konserwacja i instalowanie maszyn i urządzeń
+D;WYTWARZANIE I ZAOPATRYWANIE W ENERGIĘ ELEKTRYCZNĄ, GAZ, PARĘ WODNĄ I POWIETRZE DO UKŁADÓW KLIMATYZACYJNYCH;35;Wytwarzanie i zaopatrywanie w energię elektryczną, gaz, parę wodną i powietrze do układów klimatyzacyjnych
+E;DOSTAWA WODY, GOSPODAROWANIE ŚCIEKAMI I ODPADAMI ORAZ DZIAŁALNOŚĆ ZWIĄZANA Z REKULTYWACJĄ;36;Pobór, uzdatnianie i dostarczanie wody
+E;DOSTAWA WODY, GOSPODAROWANIE ŚCIEKAMI I ODPADAMI ORAZ DZIAŁALNOŚĆ ZWIĄZANA Z REKULTYWACJĄ;37;Odpowadzanie i oczyszczanie ścieków
+E;DOSTAWA WODY, GOSPODAROWANIE ŚCIEKAMI I ODPADAMI ORAZ DZIAŁALNOŚĆ ZWIĄZANA Z REKULTYWACJĄ;38;Działalność związana ze zbieraniem, odzyskiem i unieszkodliwianiem odpadów
+E;DOSTAWA WODY, GOSPODAROWANIE ŚCIEKAMI I ODPADAMI ORAZ DZIAŁALNOŚĆ ZWIĄZANA Z REKULTYWACJĄ;39;Działalność związana z rekultywacją i pozostała działalność usługowa związana z gospodarką odpadami
+F;BUDOWNICTWO;41;Roboty budowlane związane ze wznoszeniem budynków mieszkalnych i niemieszkalnych
+F;BUDOWNICTWO;42;Roboty związane z budową obiektów inżynierii lądowej i wodnej
+F;BUDOWNICTWO;43;Roboty budowlane specjalistyczne
+G;HANDEL HURTOWY I DETALICZNY, NAPRAWA POJAZDÓW SAMOCHODOWYCH, WŁĄCZAJĄC MOTOCYKLE;45;Handel hurtowy i detaliczny; naprawa pojazdów samochodowych i motocykli
+G;HANDEL HURTOWY I DETALICZNY, NAPRAWA POJAZDÓW SAMOCHODOWYCH, WŁĄCZAJĄC MOTOCYKLE;46;Handel hurtowy (z wyjątkiem handlu pojazdami samochodowymi)
+G;HANDEL HURTOWY I DETALICZNY, NAPRAWA POJAZDÓW SAMOCHODOWYCH, WŁĄCZAJĄC MOTOCYKLE;47;Handel detaliczny (z wyjątkiem handlu pojazdami samochodowymi)
+H;TRANSPORT I GOSPODARKA MAGAZYNOWA;49;Transport lądowy oraz transport rurociągowy
+H;TRANSPORT I GOSPODARKA MAGAZYNOWA;50;Transport wodny
+H;TRANSPORT I GOSPODARKA MAGAZYNOWA;51;Transport lotniczy
+H;TRANSPORT I GOSPODARKA MAGAZYNOWA;52;Magazynowanie, przechowywanie i działalność usługowa wspomagająca transport
+H;TRANSPORT I GOSPODARKA MAGAZYNOWA;53;Działalność pocztowa i kurierska
+I;DZIAŁALNOŚĆ ZWIĄZANA Z ZAKWATEROWANIEM I USŁUGAMI GASTRONOMICZNYMI;55;Zakwaterowanie
+I;DZIAŁALNOŚĆ ZWIĄZANA Z ZAKWATEROWANIEM I USŁUGAMI GASTRONOMICZNYMI;56;Działalność usługowa związana z wyżywieniem
+J;DZIAŁALNOŚĆ WYDAWNICZA I NADAWCZA ORAZ ZWIĄZANA Z PRODUKCJĄ I DYSTRYBUCJĄ TREŚCI;58;Działalność wydawnicza
+J;DZIAŁALNOŚĆ WYDAWNICZA I NADAWCZA ORAZ ZWIĄZANA Z PRODUKCJĄ I DYSTRYBUCJĄ TREŚCI;59;Działalność związana z produkcją filmów, nagrań wideo, programów telewizyjnych, nagrań dźwiękowych i muzycznych
+J;DZIAŁALNOŚĆ WYDAWNICZA I NADAWCZA ORAZ ZWIĄZANA Z PRODUKCJĄ I DYSTRYBUCJĄ TREŚCI;60;Nadawanie programów ogólnodostępnych i abonamentowych; działalność agencji informacyjnych i pozostała działalność związana z dystrybucją treści
+K;TELEKOMUNIKACJA, PROGRAMOWANIE, DORADZTWO IT, INFRASTRUKTURA I INNE USŁUGI INFORMACYJNE;61;Telekomunikacja
+K;TELEKOMUNIKACJA, PROGRAMOWANIE, DORADZTWO IT, INFRASTRUKTURA I INNE USŁUGI INFORMACYJNE;62;Działalność związana z programowaniem, doradztwem w zakresie informatyki i działalnością powiązaną
+K;TELEKOMUNIKACJA, PROGRAMOWANIE, DORADZTWO IT, INFRASTRUKTURA I INNE USŁUGI INFORMACYJNE;63;Działalność usługowa w zakresie infrastruktury obliczeniowej, przetwarzania danych, zarządzania stronami internetowymi (hosting) i pozostała działalność usługowa w zakresie informacji
+L;DZIAŁALNOŚĆ FINANSOWA I UBEZPIECZENIOWA (ORAZ OBSŁUGA RYNKU NIERUCHOMOŚCI);64;Finansowa działalność usługowa, z wyłączeniem ubezpieczeń i funduszy emerytalnych
+L;DZIAŁALNOŚĆ FINANSOWA I UBEZPIECZENIOWA (ORAZ OBSŁUGA RYNKU NIERUCHOMOŚCI);65;Działalność w zakresie ubezpieczeń, reasekuracji oraz funduszy emerytalnych, z wyłączeniem obowiązkowego ubezpieczenia społecznego
+L;DZIAŁALNOŚĆ FINANSOWA I UBEZPIECZENIOWA (ORAZ OBSŁUGA RYNKU NIERUCHOMOŚCI);66;Działalność wspomagająca usługi finansowe, ubezpieczenia i fundusze emerytalne
+M;DZIAŁALNOŚĆ ZWIĄZANA Z OBSŁUGĄ RYNKU NIERUCHOMOŚCI;68;Działalność związana z obsługą rynku nieruchomości
+N;DZIAŁALNOŚĆ PROFESJONALNA, NAUKOWA I TECHNICZNA;69;Działalność prawnicza, rachunkowo‑księgowa i doradztwo podatkowe
+N;DZIAŁALNOŚĆ PROFESJONALNA, NAUKOWA I TECHNICZNA;70;Działalność central (head offices) oraz doradztwo związane z zarządzaniem
+N;DZIAŁALNOŚĆ PROFESJONALNA, NAUKOWA I TECHNICZNA;71;Działalność w zakresie architektury i inżynierii; badania i analizy techniczne
+N;DZIAŁALNOŚĆ PROFESJONALNA, NAUKOWA I TECHNICZNA;72;Badania naukowe i prace rozwojowe
+N;DZIAŁALNOŚĆ PROFESJONALNA, NAUKOWA I TECHNICZNA;73;Działalność w zakresie reklamy, badań rynku i public relations
+N;DZIAŁALNOŚĆ PROFESJONALNA, NAUKOWA I TECHNICZNA;74;Pozostała działalność profesjonalna, naukowa i techniczna
+N;DZIAŁALNOŚĆ PROFESJONALNA, NAUKOWA I TECHNICZNA;75;Działalność weterynaryjna
+O;DZIAŁALNOŚĆ W ZAKRESIE USŁUG ADMINISTROWANIA I DZIAŁALNOŚĆ WSPIERAJĄCA;77;Wynajem i dzierżawa
+O;DZIAŁALNOŚĆ W ZAKRESIE USŁUG ADMINISTROWANIA I DZIAŁALNOŚĆ WSPIERAJĄCA;78;Działalność związana z zatrudnieniem
+O;DZIAŁALNOŚĆ W ZAKRESIE USŁUG ADMINISTROWANIA I DZIAŁALNOŚĆ WSPIERAJĄCA;79;Działalność organizatorów turystyki, agentów turystycznych i pozostała działalność usługowa w zakresie rezerwacji i działalności z nią związanej
+O;DZIAŁALNOŚĆ W ZAKRESIE USŁUG ADMINISTROWANIA I DZIAŁALNOŚĆ WSPIERAJĄCA;80;Działalność detektywistyczna i ochroniarska
+O;DZIAŁALNOŚĆ W ZAKRESIE USŁUG ADMINISTROWANIA I DZIAŁALNOŚĆ WSPIERAJĄCA;81;Działalność usługowa związana z utrzymaniem porządku w budynkach i zagospodarowaniem terenów zieleni
+O;DZIAŁALNOŚĆ W ZAKRESIE USŁUG ADMINISTROWANIA I DZIAŁALNOŚĆ WSPIERAJĄCA;82;Działalność administracyjna obsługi biura i pozostała działalność wspomagająca prowadzenie działalności gospodarczej
+P;ADMINISTRACJA PUBLICZNA I OBRONA NARODOWA; OBOWIĄZKOWE UBEZPIECZENIA SPOŁECZNE;84;Administracja publiczna i obrona narodowa; obowiązkowe ubezpieczenia społeczne
+Q;EDUKACJA;85;Edukacja
+R;OPIEKA ZDROWOTNA I POMOC SPOŁECZNA;86;Opieka zdrowotna
+R;OPIEKA ZDROWOTNA I POMOC SPOŁECZNA;87;Pomoc społeczna z zakwaterowaniem
+R;OPIEKA ZDROWOTNA I POMOC SPOŁECZNA;88;Pomoc społeczna bez zakwaterowania
+S;DZIAŁALNOŚĆ ZWIĄZANA Z KULTURĄ, SPORTEM I REKREACJĄ;90;Działalność twórcza i działalność związana z wystawianiem przedstawień artystycznych
+S;DZIAŁALNOŚĆ ZWIĄZANA Z KULTURĄ, SPORTEM I REKREACJĄ;91;Działalność bibliotek, archiwów, muzeów oraz pozostała działalność związana z kulturą
+S;DZIAŁALNOŚĆ ZWIĄZANA Z KULTURĄ, SPORTEM I REKREACJĄ;92;Działalność związana z grami hazardowymi
+S;DZIAŁALNOŚĆ ZWIĄZANA Z KULTURĄ, SPORTEM I REKREACJĄ;93;Działalność sportowa, rozrywkowa i rekreacyjna
+T;POZOSTAŁA DZIAŁALNOŚĆ USŁUGOWA;94;Działalność organizacji członkowskich
+T;POZOSTAŁA DZIAŁALNOŚĆ USŁUGOWA;95;Naprawa i konserwacja komputerów, artykułów użytku osobistego i domowego oraz pojazdów silnikowych (w tym motocykli)
+T;POZOSTAŁA DZIAŁALNOŚĆ USŁUGOWA;96;Działalność usługowa indywidualna
+U;GOSPODARSTWA DOMOWE;97;Gospodarstwa domowe zatrudniające pracowników
+U;GOSPODARSTWA DOMOWE;98;Gospodarstwa domowe produkujące wyroby i świadczące usługi na własne potrzeby
