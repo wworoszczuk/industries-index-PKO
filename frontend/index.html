@@ -204,7 +204,7 @@
 
     async function fetchData() {
         try {
-            const response = await fetch('../output/iab_data.json'); 
+            const response = await fetch('iab_data.json');
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             allData = await response.json();
             
